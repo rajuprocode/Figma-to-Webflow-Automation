@@ -56,13 +56,26 @@ replace with an Embed holding the SVG and `fill="currentColor"`.
 Turn on GSAP + ScrollTrigger in Site Settings → GSAP, then paste
 `src/js/global.js` into Site Settings → Custom Code (footer) and
 `src/js/home.js` into the Homepage's Page Settings → Before `</body>`.
-All animation hooks are custom attributes, so no class changes are needed:
+Text reveals use the same combo classes as the Webflow site's existing reveal
+script (already in the Home page's footer code, with Lenis smooth scroll in the
+site footer), so in Webflow only the classes need adding; `src/js/reveal.js` is
+the code build's copy of that script:
+
+| Class | Effect |
+| --- | --- |
+| `reveal-chars` | characters rise and fade in (hero headline) |
+| `reveal-line-fade` | each line rises while its characters fade in (headings, quote) |
+| `reveal-lines` | lines rise and fade in (paragraphs) |
+| `fade-in` | 10px rise + fade (tags, buttons, numbers) |
+| `delay-0.1s` … `delay-0.6s` | start delay |
+
+Smooth scroll: Lenis (duration 1.2, expo-out) in Webflow; the code build eases
+the wheel the same way, and scroll-linked motion uses `scrub: 1` (about stream 0.6).
+
+Other hooks are custom attributes:
 
 | Attribute | Effect | Classic IX2 equivalent |
 | --- | --- | --- |
-| `data-animate="fade-up"` | fade + 32px rise on enter | Scroll into view → Move Y 32→0, Opacity 0→100 |
-| `data-animate="stagger"` | children fade up 0.12s apart | Same, with child stagger |
-| `data-animate="split-lines"` | heading lines rise from a mask | GSAP only (SplitText-style) |
 | `data-animate="image-reveal"` | clip-path wipe from bottom | GSAP only |
 | `data-parallax="0.12"` | image drifts while scrolling | While scrolling in view → Move Y |
 | `data-marquee` | infinite logo strip | Page load → loop Move X −50% |

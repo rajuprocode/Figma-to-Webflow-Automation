@@ -253,3 +253,12 @@
   .footer_legal-links { gap: 0.75rem 1.5rem; }
   .footer_badges { width: 100%; max-width: 21.375rem; }
 }
+
+/* ---------- Text reveals (same rules as the Webflow page footer code) ---------- */
+.w-mod-js :is(.fade-in, .fade-in-down, .reveal-line-fade, .reveal-chars, .reveal-lines, .reveal-cascade) { visibility: hidden; }
+html.reveal-failsafe :is(.fade-in, .fade-in-down, .reveal-line-fade, .reveal-chars, .reveal-lines, .reveal-cascade) { visibility: visible !important; }
+.rv-word { display: inline-block; white-space: nowrap; } /* keeps long words whole, as before splitting */
+/* Chars only fade in line-fade reveals, so they stay inline and keep the font's kerning;
+   reveals that move each char need inline-block */
+.reveal-chars .rv-char, .reveal-cascade .rv-char { display: inline-block; }
+.rv-char { will-change: transform, opacity; }

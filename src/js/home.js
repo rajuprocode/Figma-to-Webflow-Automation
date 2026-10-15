@@ -53,20 +53,7 @@
 
   if (!hasGsap || reduceMotion) return;
 
-  /* ---------- Hero: headline lines rise on load ---------- */
-  var heroLines = document.querySelectorAll(".home-hero_line");
-  heroLines.forEach(function (line) {
-    var wrap = document.createElement("span");
-    wrap.style.display = "block";
-    wrap.style.overflow = "hidden";
-    wrap.style.paddingBottom = "0.06em";
-    line.parentNode.insertBefore(wrap, line);
-    wrap.appendChild(line);
-  });
-  gsap.timeline({ delay: 0.15 })
-    .from(heroLines, { yPercent: 110, duration: 1.2, ease: "power4.out", stagger: 0.1 })
-    .from(".home-hero_aside", { y: 24, autoAlpha: 0, duration: 0.9, ease: "power3.out" }, "-=0.7")
-    .from(".home-hero_logos", { autoAlpha: 0, duration: 0.8 }, "-=0.6");
+  /* Hero text uses the shared reveal classes (reveal-chars, reveal-lines, fade-in + delays). */
 
   var mm = gsap.matchMedia();
 
@@ -85,7 +72,7 @@
           start: "top top",
           end: "+=" + PIN,
           pin: isMobile ? false : about.querySelector("[data-about-pin]"),
-          scrub: true
+          scrub: 0.6
         }
       });
       lanes.forEach(function (lane) {
@@ -113,7 +100,7 @@
       if (!nextCard) return;
       gsap.to(card, {
         scale: 0.94, autoAlpha: 0.4, ease: "none",
-        scrollTrigger: { trigger: nextCard, start: "top bottom", end: "top top+=120", scrub: true }
+        scrollTrigger: { trigger: nextCard, start: "top bottom", end: "top top+=120", scrub: 1 }
       });
     });
   });
