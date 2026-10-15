@@ -4,13 +4,12 @@
    GSAP + ScrollTrigger in Site Settings → GSAP (Webflow ships GSAP natively).
    Everything is driven by data-attributes so the markup stays class-clean:
      data-navbar / data-navbar-toggle   – mobile menu + hide on scroll
-     data-animate="fade-up"             – fade + 32px rise when scrolled into view
-     data-animate="stagger"             – children fade up one after another
-     data-animate="split-lines"         – heading lines rise from a mask
      data-animate="image-reveal"        – clip-path reveal from bottom
      data-animate="footer-logo"         – oversized wordmark slides up
-     data-parallax="0.12"               – image drifts inside its wrapper
+     data-parallax="0.12"               – image drifts inside its wrapper (smoothed)
      data-marquee / data-marquee-track  – infinite logo strip
+   Smooth scrolling: Webflow loads Lenis (duration 1.2, expo-out) in Site
+   Settings → Footer; this build uses the matching inertia below.
    ========================================================================== */
 (function () {
   "use strict";
@@ -41,6 +40,29 @@
     }, { passive: true });
   }
 
+  /* ---------- Smooth scrolling (mouse wheel only; touch and keyboard stay native) ----------
+     Eases toward the wheel target like Lenis (duration 1.2, expo-out), so every
+     ScrollTrigger scrub and parallax glides instead of stepping. */
+  if (!reduceMotion && hasGsap && window.matchMedia("(pointer: fine)").matches) {
+    var target = window.scrollY, current = target, gliding = false;
+    var maxScroll = function () { return document.documentElement.scrollHeight - window.innerHeight; };
+    window.addEventListener("wheel", function (e) {
+      if (e.ctrlKey || document.documentElement.style.overflow === "hidden" || e.target.closest("[data-lenis-prevent]")) return;
+      e.preventDefault();
+      if (!gliding) target = current = window.scrollY;
+      var step = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * window.innerHeight : e.deltaY;
+      target = Math.max(0, Math.min(maxScroll(), target + step));
+      gliding = true;
+    }, { passive: false });
+    window.addEventListener("scroll", function () { if (!gliding) target = current = window.scrollY; }, { passive: true });
+    gsap.ticker.add(function (time, dt) {
+      if (!gliding) return;
+      current += (target - current) * (1 - Math.exp(-dt / 140));
+      if (Math.abs(target - current) < 0.5) { current = target; gliding = false; }
+      window.scrollTo(0, current);
+    });
+  }
+
   /* ---------- Logo marquee (duplicates the track for a seamless loop) ---------- */
   document.querySelectorAll("[data-marquee]").forEach(function (marquee) {
     var track = marquee.querySelector("[data-marquee-track]");
@@ -65,49 +87,7 @@
 
   if (reduceMotion || !hasGsap) return;
 
-  /* ---------- Scroll reveals ---------- */
-  gsap.utils.toArray('[data-animate="fade-up"]').forEach(function (el) {
-    gsap.from(el, {
-      y: 32, autoAlpha: 0, duration: 0.9, ease: "power3.out",
-      scrollTrigger: { trigger: el, start: "top 88%", once: true }
-    });
-  });
-
-  gsap.utils.toArray('[data-animate="stagger"]').forEach(function (el) {
-    var items = Array.prototype.filter.call(el.children, function (c) { return !c.classList.contains("corner-mark"); });
-    gsap.from(items, {
-      y: 40, autoAlpha: 0, duration: 0.9, ease: "power3.out", stagger: 0.12,
-      scrollTrigger: { trigger: el, start: "top 85%", once: true }
-    });
-  });
-
-  /* Split heading into lines without a paid plugin: wrap words, group by offsetTop */
-  function splitLines(el) {
-    var words = el.textContent.trim().split(/\s+/);
-    el.innerHTML = words.map(function (w) { return '<span class="split-word" style="display:inline-block">' + w + "</span>"; }).join(" ");
-    var lines = [], top = null;
-    el.querySelectorAll(".split-word").forEach(function (w) {
-      if (w.offsetTop !== top) { lines.push([]); top = w.offsetTop; }
-      lines[lines.length - 1].push(w.textContent);
-    });
-    el.setAttribute("aria-label", words.join(" "));
-    el.innerHTML = lines.map(function (l) {
-      return '<span class="split-line" aria-hidden="true" style="display:block;overflow:hidden;padding-bottom:0.08em;margin-bottom:-0.08em"><span class="split-line-inner" style="display:block">' + l.join(" ") + "</span></span>";
-    }).join("");
-    return el.querySelectorAll(".split-line-inner");
-  }
-
-  function initSplitHeadings() {
-    gsap.utils.toArray('[data-animate="split-lines"]').forEach(function (el) {
-      var inner = splitLines(el);
-      gsap.from(inner, {
-        yPercent: 105, duration: 1.1, ease: "power4.out", stagger: 0.08,
-        scrollTrigger: { trigger: el, start: "top 85%", once: true }
-      });
-    });
-  }
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(initSplitHeadings);
-  else window.addEventListener("load", initSplitHeadings);
+  /* Text reveals live in reveal.js (Webflow class names). */
 
   gsap.utils.toArray('[data-animate="image-reveal"]').forEach(function (el) {
     gsap.fromTo(el, { clipPath: "inset(100% 0% 0% 0%)" }, {
@@ -120,7 +100,7 @@
     var amount = parseFloat(img.getAttribute("data-parallax")) || 0.1;
     gsap.fromTo(img, { yPercent: -amount * 50 }, {
       yPercent: amount * 50, ease: "none",
-      scrollTrigger: { trigger: img.parentElement, start: "top bottom", end: "bottom top", scrub: true }
+      scrollTrigger: { trigger: img.parentElement, start: "top bottom", end: "bottom top", scrub: 1 }
     });
   });
 
