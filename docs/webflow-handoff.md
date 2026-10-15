@@ -73,3 +73,24 @@ All animation hooks are custom attributes, so no class changes are needed:
 | `data-slider` | customer stories prev / next | Webflow Slider or GSAP |
 
 Every animation respects `prefers-reduced-motion`.
+
+## 6. Assets
+
+All homepage images come straight from the Figma file (no screenshots):
+
+| Folder | Contents | Webflow |
+| --- | --- | --- |
+| `assets/images/logos` | 27 "Trusted by" logos, each pre-sized to its Figma slot (so every marquee item is a plain Image), plus dark story logos | Upload as-is |
+| `assets/images/global` | Nav + footer MX3 logos, badges (HIPAA, SOC 2, OSHA), arrow/chevron/cart/corner-mark icons, `grain.png` (64px tile, 10% opacity) | SVGs can be pasted into an Embed with `currentColor` |
+| `assets/images/icons` | Feature-chip and social icons | Upload or Embed |
+| `assets/images/home` | Section photos at 2× their Figma frame, already cropped the way Figma crops them | Upload; keep `object-fit: cover` |
+
+The four "Why MX3" visuals are layered, not flattened: a background-colour
+block (`background-color-brand / -accent / -secondary`), transparent WebP
+product renders positioned in % (`home-why_layer is-*`), glass chips
+(`home-why_chip`, backdrop blur 12px) and badges (`home-why_badge`, backdrop
+blur 24px). Rebuild them in Webflow as a relative div with absolutely
+positioned children using the same % values.
+
+Known Figma gap: the Elite Sports use-case background (`usecase-background-sports.jpg`)
+is only 564×705 in Figma; the design notes already ask for a higher-resolution photo.

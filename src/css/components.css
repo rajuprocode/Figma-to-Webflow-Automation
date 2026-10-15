@@ -13,9 +13,9 @@
   -webkit-mask: var(--icon) center / contain no-repeat;
           mask: var(--icon) center / contain no-repeat;
 }
-.icon-embed-arrow   { --icon: url("../assets/images/global/icon-arrow-right.png"); width: 1.5rem; height: 1.5rem; }
-.icon-embed-chevron { --icon: url("../assets/images/global/icon-chevron-down.png"); width: 1rem; height: 1rem; }
-.icon-embed-cart    { --icon: url("../assets/images/global/icon-cart.png"); width: 1.125rem; height: 1.125rem; }
+.icon-embed-arrow   { --icon: url("../assets/images/global/icon-arrow-right.svg"); width: 1.5rem; height: 1.5rem; }
+.icon-embed-chevron { --icon: url("../assets/images/global/icon-chevron-down.svg"); width: 1rem; height: 1rem; }
+.icon-embed-cart    { --icon: url("../assets/images/global/icon-cart.svg"); width: 1.125rem; height: 1.125rem; }
 
 /* ---------- Button (Style Guide · Buttons, Component 357) ---------- */
 .button {
@@ -133,7 +133,7 @@
 .corner-mark::before {
   content: "";
   width: 0.875rem; height: 0.5625rem;
-  background: url("../assets/images/global/icon-corner-mark.png") center / contain no-repeat;
+  background: url("../assets/images/global/icon-corner-mark.svg") center / contain no-repeat;
 }
 .corner-mark.is-white::before { filter: brightness(0) invert(1); }
 .corner-mark.is-top-left     { top: -0.625rem; left: -0.75rem; }
@@ -146,12 +146,9 @@
   position: absolute; inset: 0;
   opacity: 0.1;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='64' height='64' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("../assets/images/global/grain.png");
   background-size: 4rem 4rem;
 }
-
-/* ---------- Asset placeholder (image not yet exported from Figma) ---------- */
-.asset-pending { background-color: #2a2a2a; }
 
 /* ==========================================================================
    Navbar (Figma 7685:10563)
@@ -229,19 +226,12 @@
 .footer_divider { height: 1px; background-color: var(--border-color-dark); }
 .footer_middle { display: flex; align-items: stretch; justify-content: space-between; gap: 3rem; }
 .footer_brand { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; width: 21.25rem; }
-.footer_badges { width: 21.375rem; height: auto; }
+.footer_badges { display: flex; gap: 1rem; }
+.footer_badge { display: block; width: 6.4464rem; height: 6.4464rem; }   /* 103.14 */
 .footer_socials { display: flex; gap: 0.5rem; }
-/* Interim sprite of the 5 Figma social icons; swap for individual SVGs once exported */
-.footer_social-link {
-  display: block; width: 2.75rem; height: 2.75rem; border-radius: 50%;
-  background: url("../assets/images/global/footer-socials.png") 0 0 / 21.25rem 2.75rem no-repeat;
-  transition: opacity var(--duration-fast);
-}
+.footer_social-link { display: block; width: 2.75rem; height: 2.75rem; transition: opacity var(--duration-fast); }
+.footer_social-link img { display: block; width: 100%; height: 100%; }
 .footer_social-link:hover { opacity: 0.7; }
-.footer_social-link.is-x         { background-position: -3.25rem 0; }
-.footer_social-link.is-youtube   { background-position: -6.5rem 0; }
-.footer_social-link.is-instagram { background-position: -9.75rem 0; }
-.footer_social-link.is-linkedin  { background-position: -13rem 0; }
 .footer_link-columns { display: flex; flex-direction: column; gap: 2.5rem; width: 50.875rem; }
 .footer_link-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .footer_link-column { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
