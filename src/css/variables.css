@@ -1,0 +1,86 @@
+/* ==========================================================================
+   MX3 design tokens
+   Source: Figma "Style Guide – General" (node 7497:16702) + Homepage usage.
+   In Webflow: create each of these as a Variable (Colors / Typography / Size)
+   with the same name, then reference the variable from the class.
+   ========================================================================== */
+
+:root {
+  /* ---------- Colors / Brand ---------- */
+  --color-primary: #47c3d4;          /* Primary Blue – key actions */
+  --color-secondary: #ff4500;        /* Secondary Orange – emphasis, use sparingly */
+  --color-tan: #f4f4f2;              /* Tan BG */
+  --color-tan-dark: #eeece8;         /* Product image panels */
+  --color-white: #ffffff;
+  --color-black: #0b0b0b;            /* Primary text, dark sections */
+  --color-black-button: #0d0d0d;     /* Secondary Fill (light mode) */
+
+  /* ---------- Colors / Text ---------- */
+  --text-color-primary: var(--color-black);
+  --text-color-secondary: #5d5d5d;   /* Secondary text on light bg */
+  --text-color-secondary-dark: #919191; /* Secondary text on dark bg */
+  --text-color-muted: #adadad;       /* "/4" counters */
+  --text-color-alternate: var(--color-white);
+
+  /* ---------- Colors / Border ---------- */
+  --border-color-light: #e0e0e0;     /* Cards, dividers, inputs on light bg */
+  --border-color-dark: #404040;      /* Same on dark bg */
+  --border-color-divider: #dcdcdc;
+  --border-color-hero: #696969;
+  --border-color-glass: rgba(255, 255, 255, 0.3);
+
+  /* ---------- Colors / Neutral greys (Global) ---------- */
+  --neutral-grey-200: #f8f8f8;
+  --neutral-grey-400: #ececed;
+  --neutral-grey-600: #dcdcde;
+
+  /* ---------- Overlays ---------- */
+  --overlay-nav: rgba(11, 11, 11, 0.45);
+  --overlay-glass: rgba(11, 11, 11, 0.2);
+  --overlay-hero: rgba(11, 11, 11, 0.26);
+
+  /* ---------- Typography / Families ---------- */
+  --font-primary: "Geist", "Helvetica Neue", Arial, sans-serif;
+
+  /* ---------- Typography / Weights ---------- */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ---------- Layout (Style Guide · Layout & Grids) ----------
+     Desktop 1440: 12 cols, 32px margin, 24px gutter, 62px nav
+     Tablet 1024:  8 cols, 24px margin, 20px gutter, 62px nav
+     Mobile 390:   4 cols, 16px margin, 16px gutter, 56px nav */
+  --site-margin: 2rem;
+  --grid-gutter: 1.5rem;
+  --nav-height: 3.875rem;
+  --container-large: 86rem;   /* 1376px = 1440 - 2 × 32 */
+  --container-medium: 64rem;
+  --container-small: 48rem;
+
+  /* ---------- Radius ---------- */
+  --radius-pill: 2.5rem;
+  --radius-small: 0.375rem;
+  --radius-medium: 0.625rem;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --site-margin: 1.5rem;
+    --grid-gutter: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --site-margin: 1rem;
+    --grid-gutter: 1rem;
+    --nav-height: 3.5rem;
+  }
+}

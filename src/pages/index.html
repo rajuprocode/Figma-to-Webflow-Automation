@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MX3 Hydration Testing · Measured, Not Estimated</title>
+  <meta name="description" content="MX3 measures hydration directly from saliva, on site, in about 10 seconds. Hydration status and sweat sodium testing for workplace safety and elite sports.">
+  <link rel="preload" href="/assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/client-first.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<div class="page-wrapper">
+  <!-- @include navbar -->
+
+  <main class="main-wrapper">
+
+    <!-- ===================== HERO (Figma 7497:19759) ===================== -->
+    <header class="section_home-hero">
+      <div class="home-hero_background">
+        <img src="/assets/images/home/hero.jpg" alt="Hand holding an MX3 meter showing a hydration reading" class="home-hero_image" fetchpriority="high">
+        <div class="home-hero_overlay"></div>
+        <div class="grain-overlay"></div>
+      </div>
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="home-hero_content">
+            <h1 class="home-hero_heading heading-style-display" data-animate="hero-heading">
+              <span class="home-hero_line">Measured,</span>
+              <span class="home-hero_line">Not <span class="text-color-brand">Estimated.</span></span>
+            </h1>
+            <div class="home-hero_aside" data-animate="fade-up">
+              <p class="text-size-medium home-hero_text">Every other field method infers hydration from something else. MX3 measures the biomarker itself, from saliva, on site, in about 10 seconds.</p>
+              <a href="/products" class="button is-white">
+                <span class="button_label">See How It Works</span>
+                <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-hero_logos">
+        <div class="tag text-color-alternate home-hero_logos-tag">Trusted by</div>
+        <div class="home-hero_marquee" data-marquee>
+          <div class="home-hero_marquee-track" data-marquee-track>
+            <img src="/assets/images/logos/bhp.png" alt="BHP" class="home-hero_logo" width="89" height="48">
+            <img src="/assets/images/logos/chicago-bears.png" alt="Chicago Bears" class="home-hero_logo" width="67" height="48">
+            <img src="/assets/images/logos/cincinnati-reds.svg" alt="Cincinnati Reds" class="home-hero_logo" width="64" height="48">
+            <img src="/assets/images/logos/clean-harbors.svg" alt="Clean Harbors" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/denver-broncos.png" alt="Denver Broncos" class="home-hero_logo" width="77" height="48">
+            <img src="/assets/images/logos/conocophillips.png" alt="ConocoPhillips" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/downer.png" alt="Downer" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/duke.png" alt="Duke" class="home-hero_logo" width="69" height="48">
+            <img src="/assets/images/logos/us-navy.svg" alt="U.S. Navy" class="home-hero_logo" width="105" height="48">
+            <img src="/assets/images/logos/exxonmobil.svg" alt="ExxonMobil" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/florence-copper.png" alt="Florence Copper" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/houston-rockets.png" alt="Houston Rockets" class="home-hero_logo" width="62" height="48">
+            <img src="/assets/images/logos/las-vegas-raiders.svg" alt="Las Vegas Raiders" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/detroit-pistons.png" alt="Detroit Pistons" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/la-dodgers.png" alt="Los Angeles Dodgers" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/new-york-yankees.png" alt="New York Yankees" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/newcrest-mining.png" alt="Newcrest Mining" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/ohio-state.svg" alt="Ohio State" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/psg.svg" alt="Paris Saint-Germain" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/phoenix-suns.svg" alt="Phoenix Suns" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/real-madrid.svg" alt="Real Madrid" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/sf-giants.svg" alt="San Francisco Giants" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/teneo.svg" alt="Teneo" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/ucla.svg" alt="UCLA" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/atlanta-braves.svg" alt="Atlanta Braves" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/alabama-crimson-tide.png" alt="Alabama Crimson Tide" class="home-hero_logo" width="104" height="48">
+            <img src="/assets/images/logos/mercedes-amg-petronas.png" alt="Mercedes-AMG Petronas F1" class="home-hero_logo" width="104" height="48">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== ABOUT · photo stream (Figma 7643:24782 + motion outline 7651:5188) ===================== -->
+    <section class="section_home-about" data-about-stream>
+      <div class="home-about_pin" data-about-pin>
+        <div class="home-about_lane is-outer-left" data-lane data-speed="3">
+          <img src="/assets/images/home/about-left-outer-1.jpg" alt="" class="home-about_photo" width="180" height="280" loading="lazy">
+          <img src="/assets/images/home/about-left-outer-2.jpg" alt="" class="home-about_photo" width="180" height="220" loading="lazy">
+        </div>
+        <div class="home-about_lane is-inner-left" data-lane data-speed="2.1">
+          <img src="/assets/images/home/about-left-inner-1.jpg" alt="" class="home-about_photo" width="130" height="180" loading="lazy">
+          <img src="/assets/images/home/about-left-inner-2.jpg" alt="" class="home-about_photo" width="130" height="210" loading="lazy">
+          <img src="/assets/images/home/about-left-inner-3.jpg" alt="" class="home-about_photo" width="130" height="170" loading="lazy">
+        </div>
+        <div class="home-about_lane is-inner-right" data-lane data-speed="1.8">
+          <img src="/assets/images/home/about-right-inner-1.jpg" alt="" class="home-about_photo" width="130" height="170" loading="lazy">
+          <img src="/assets/images/home/about-right-inner-2.jpg" alt="" class="home-about_photo" width="130" height="210" loading="lazy">
+        </div>
+        <div class="home-about_lane is-outer-right" data-lane data-speed="3.2">
+          <img src="/assets/images/home/about-right-outer-1.jpg" alt="" class="home-about_photo" width="180" height="270" loading="lazy">
+          <img src="/assets/images/home/about-right-outer-2.jpg" alt="" class="home-about_photo" width="180" height="210" loading="lazy">
+          <img src="/assets/images/home/about-right-outer-3.jpg" alt="" class="home-about_photo" width="180" height="250" loading="lazy">
+        </div>
+
+        <div class="home-about_card">
+          <div class="home-about_card-inner">
+            <div class="tag">About us</div>
+            <h2 class="heading-style-quote">MX3 gives elite sports and workplace safety teams direct, benchmarked hydration information through salivary osmolarity and sweat-sodium testing—all in one portable system.</h2>
+            <a href="/about/company-and-team" class="button is-primary">
+              <span class="button_label">Learn More</span>
+              <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+            </a>
+          </div>
+          <span class="corner-mark is-top-left"></span><span class="corner-mark is-top-right"></span>
+          <span class="corner-mark is-bottom-left"></span><span class="corner-mark is-bottom-right"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THE GAP (Figma 7497:20148) ===================== -->
+    <section class="section_home-gap background-color-secondary">
+      <div class="home-gap_divider"></div>
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-medium">
+            <div class="home-gap_component">
+              <h2 class="home-gap_heading heading-style-section text-style-capitalize" data-animate="split-lines">Hydration Matters Before the Decision Is Already Made</h2>
+              <div class="home-gap_info text-size-tiny text-style-allcaps">
+                <p>workplace safety and</p>
+                <p>elite and professional sports</p>
+              </div>
+              <div class="home-gap_content" data-animate="fade-up">
+                <div class="tag">The gap</div>
+                <div class="home-gap_text text-size-xlarge">
+                  <p>Dehydration doesn’t announce itself. Cognitive performance can decline at around 1% body-mass loss, with strength and endurance following at 2% as heat-related risk rises. </p>
+                  <p>Hydration already matters across performance, safety, and occupational health. What teams often lack is an objective measure they can repeat and act on while it still matters.</p>
+                </div>
+              </div>
+              <div class="home-gap_image-wrapper" data-animate="image-reveal">
+                <img src="/assets/images/home/gap-photo.jpg" alt="Construction crew working on a steel roof" class="image-cover home-gap_image" data-parallax="0.12" loading="lazy">
+                <div class="grain-overlay"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUCTS (Figma 7497:20175) ===================== -->
+    <section class="section_home-products">
+      <div class="home-products_row">
+        <div class="home-products_visual">
+          <img src="/assets/images/home/product-hydration-status.jpg" alt="MX3 Pro meter with a hydration test strip inserted" class="image-cover" loading="lazy">
+        </div>
+        <div class="home-products_content" data-animate="fade-up">
+          <div class="tag">Product</div>
+          <div class="home-products_text">
+            <h2 class="heading-style-section text-style-capitalize home-products_heading">Hydration Status</h2>
+            <div class="home-products_details text-size-medium">
+              <div class="home-products_detail">
+                <p class="text-weight-bold">Where Does Hydration Stand Right Now?</p>
+                <p>Salivary osmolarity (SOSM) provides an objective measure used to assess current hydration status.</p>
+              </div>
+              <div class="home-products_detail">
+                <p class="text-weight-bold">How It Runs</p>
+                <p>A fast, noninvasive saliva test at the point of need, with a result in about 10 seconds.</p>
+              </div>
+            </div>
+          </div>
+          <a href="/products/hydration-status" class="button is-primary">
+            <span class="button_label">Learn More</span>
+            <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+          </a>
+        </div>
+      </div>
+      <div class="home-products_row is-second">
+        <div class="home-products_visual">
+          <img src="/assets/images/home/product-sweat-sodium.jpg" alt="MX3 Pro meter with a sweat test strip inserted" class="image-cover" loading="lazy">
+        </div>
+        <div class="home-products_content" data-animate="fade-up">
+          <div class="tag">Product</div>
+          <div class="home-products_text">
+            <h2 class="heading-style-section text-style-capitalize home-products_heading">Sweat Sodium</h2>
+            <div class="home-products_details text-size-medium">
+              <div class="home-products_detail">
+                <p class="text-weight-bold">How Does Sodium Loss Differ by Individual?</p>
+                <p>MX3 measures sodium concentration in sweat to help teams understand an individual sodium-loss profile.</p>
+              </div>
+              <div class="home-products_detail">
+                <p class="text-weight-bold">How It Runs</p>
+                <p>Measured on site through the same device used for hydration-status testing. </p>
+              </div>
+            </div>
+          </div>
+          <a href="/products/sweat-sodium" class="button is-primary">
+            <span class="button_label">Learn More</span>
+            <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+          </a>
+          <p class="home-products_note">Where hydration stands and what this person loses. Two questions, one system.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIAL (Figma 7497:20212) ===================== -->
+    <section class="section_home-testimonial">
+      <img src="/assets/images/home/testimonial-background.jpg" alt="" class="home-testimonial_background" loading="lazy">
+      <div class="home-testimonial_overlay"></div>
+      <div class="grain-overlay"></div>
+      <div class="home-testimonial_line is-vertical"></div>
+      <div class="home-testimonial_line is-horizontal"></div>
+      <div class="home-testimonial_card" data-animate="fade-up">
+        <div class="tag text-color-alternate">Testimonial</div>
+        <blockquote class="heading-style-quote home-testimonial_quote">“MX3 gives our team a clearer, more objective way to understand hydration status in real time. It helps us move from general guidance to more informed decisions for the people we’re responsible for.”</blockquote>
+        <div class="home-testimonial_author">
+          <img src="/assets/images/home/testimonial-avatar.png" alt="" class="home-testimonial_avatar" width="57" height="57" loading="lazy">
+          <div>
+            <div class="text-size-medium home-testimonial_name">Jordan Lee</div>
+            <div class="home-testimonial_role">Example Organization</div>
+          </div>
+        </div>
+        <span class="corner-mark is-top-left"></span><span class="corner-mark is-top-right"></span>
+        <span class="corner-mark is-bottom-left"></span><span class="corner-mark is-bottom-right"></span>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES (Figma 7497:20247) ===================== -->
+    <section class="section_home-features">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-medium">
+            <div class="home-features_component">
+              <div class="home-features_header">
+                <h2 class="heading-style-section text-style-capitalize home-features_heading" data-animate="split-lines">Measure While It Still Matters</h2>
+                <p class="text-size-medium home-features_intro" data-animate="fade-up">Hydration-status testing returns a result in about 10 seconds with minimal preparation. Teams can test before activity and retest during work, training, or recovery without waiting for laboratory turnaround.</p>
+              </div>
+              <div class="home-features_list" data-animate="stagger">
+                <div class="home-features_item">
+                  <div class="text-size-large home-features_number">01</div>
+                  <div class="home-features_body">
+                    <h3 class="heading-style-feature">About 10 Sec</h3>
+                    <p class="text-size-medium">An on-device reading in roughly 10 seconds, fast enough to act while the result still matters.</p>
+                  </div>
+                </div>
+                <div class="home-features_item">
+                  <div class="text-size-large home-features_number">02</div>
+                  <div class="home-features_body">
+                    <h3 class="heading-style-feature">Noninvasive</h3>
+                    <p class="text-size-medium">A simple saliva sample with no urine collection, no bathroom access, and no disruption to the workflow.</p>
+                  </div>
+                </div>
+                <div class="home-features_item">
+                  <div class="text-size-large home-features_number">03</div>
+                  <div class="home-features_body">
+                    <h3 class="heading-style-feature">Repeatable</h3>
+                    <p class="text-size-medium">Test and retest across the full cycle—before, during, and after work, training, or recovery.</p>
+                  </div>
+                </div>
+                <div class="home-features_item">
+                  <div class="text-size-large home-features_number">04</div>
+                  <div class="home-features_body">
+                    <h3 class="heading-style-feature">Portable</h3>
+                    <p class="text-size-medium">A portable device can support repeated testing across a crew or squad, on the sideline, jobsite, or field.</p>
+                  </div>
+                </div>
+                <span class="corner-mark home-features_mark is-x0 is-top"></span>
+                <span class="corner-mark home-features_mark is-x25 is-top"></span>
+                <span class="corner-mark home-features_mark is-x50 is-top"></span>
+                <span class="corner-mark home-features_mark is-x75 is-top"></span>
+                <span class="corner-mark home-features_mark is-x100 is-top"></span>
+                <span class="corner-mark home-features_mark is-x0 is-bottom"></span>
+                <span class="corner-mark home-features_mark is-x25 is-bottom"></span>
+                <span class="corner-mark home-features_mark is-x50 is-bottom"></span>
+                <span class="corner-mark home-features_mark is-x100 is-bottom"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE (Figma 7497:20317) ===================== -->
+    <section class="section_home-why">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-medium">
+            <div class="home-why_component">
+              <div class="home-why_header">
+                <h2 class="heading-style-section text-style-capitalize home-why_heading" data-animate="split-lines">Why Choose MX3 Lab Pro</h2>
+                <div class="text-size-xlarge home-why_intro" data-animate="fade-up">
+                  <p>MX3 directly measures salivary osmolarity, an objective biomarker used to assess current hydration status, giving teams accurate information they can use at the point of need rather than relying on indirect signals, modeled estimates, or proxies.</p>
+                  <p>Wearables and environmental monitors show conditions and load. MX3 measures what is happening inside this person, right now, working alongside those systems rather than replacing them.</p>
+                </div>
+              </div>
+              <div class="home-why_list" data-why-stack>
+                <article class="home-why_card" data-why-card>
+                  <div class="home-why_counter heading-style-stat">1<span class="text-color-muted">/4</span></div>
+                  <div class="home-why_text">
+                    <div class="home-why_text-top">
+                      <h3 class="heading-style-card">Connected Tracking for Teams &amp; Groups</h3>
+                      <a href="/products/mx3-portal-and-app" class="button is-primary">
+                        <span class="button_label">Learn More</span>
+                        <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                      </a>
+                    </div>
+                    <p class="text-size-medium">Track hydration results over time across athletes, crews, teams, and sites, with support for both identified and anonymous group workflows. The MX3 Portal gives organizations broader visibility while keeping testing flexible for different program, privacy, and operational needs. <br>Turn individual measurements into program-level trends, giving leadership the evidence to scale a successful pilot across more sites. </p>
+                  </div>
+                  <div class="home-why_visual background-color-brand" role="img" aria-label="MX3 Portal dashboard on a laptop and the MX3 app on a phone">
+                    <img src="/assets/images/home/why-shadow-wide.svg" alt="" class="home-why_layer is-shadow-wide" loading="lazy">
+                    <img src="/assets/images/home/why-laptop.webp" alt="" class="home-why_layer is-laptop" loading="lazy">
+                    <img src="/assets/images/home/why-phone.webp" alt="" class="home-why_layer is-phone" loading="lazy">
+                    <div class="home-why_chips is-connected">
+                      <div class="home-why_chip"><img src="/assets/images/icons/seconds.svg" alt="" class="home-why_chip-icon" width="24" height="24"><div class="home-why_chip-text">Results in seconds</div></div>
+                      <div class="home-why_chip"><img src="/assets/images/icons/app.svg" alt="" class="home-why_chip-icon" width="24" height="24"><div class="home-why_chip-text">App +<br>Portal</div></div>
+                      <div class="home-why_chip"><img src="/assets/images/icons/bluetooth.svg" alt="" class="home-why_chip-icon" width="24" height="24"><div class="home-why_chip-text">Bluetooth / Offline</div></div>
+                    </div>
+                  </div>
+                </article>
+                <article class="home-why_card is-reversed" data-why-card>
+                  <div class="home-why_counter heading-style-stat">2<span class="text-color-muted">/4</span></div>
+                  <div class="home-why_visual background-color-accent" role="img" aria-label="MX3 meter with a sensor inserted, showing hydration status and sweat sodium modes">
+                    <img src="/assets/images/home/why-hipaa-wordmark.webp" alt="" class="home-why_layer is-wordmark-top" loading="lazy">
+                    <img src="/assets/images/home/why-soc-wordmark.webp" alt="" class="home-why_layer is-wordmark-bottom" loading="lazy">
+                    <img src="/assets/images/home/why-meter-sensor.webp" alt="" class="home-why_layer is-meter" loading="lazy">
+                    <img src="/assets/images/home/why-shadow.svg" alt="" class="home-why_layer is-shadow" loading="lazy">
+                    <div class="home-why_chips is-local">
+                      <div class="home-why_chip is-hydration"><img src="/assets/images/icons/hydration.svg" alt="" class="home-why_chip-icon" width="24" height="24"><div class="home-why_chip-text">Hydration<br>Status</div></div>
+                      <div class="home-why_chip is-sodium"><img src="/assets/images/icons/sodium.svg" alt="" class="home-why_chip-icon" width="24" height="24"><div class="home-why_chip-text">Sweat Sodium</div></div>
+                    </div>
+                  </div>
+                  <div class="home-why_text">
+                    <div class="home-why_text-top">
+                      <h3 class="heading-style-card home-why_title is-narrow">Local Testing Without Uploads</h3>
+                      <a href="/products/hydration-status" class="button is-primary">
+                        <span class="button_label">Learn More</span>
+                        <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                      </a>
+                    </div>
+                    <p class="text-size-medium">Keep results directly on the device when they do not need to be uploaded to the app or portal. This supports simpler workflows where immediate on-site decisions matter more than long-term tracking.</p>
+                  </div>
+                </article>
+                <article class="home-why_card" data-why-card>
+                  <div class="home-why_counter heading-style-stat">3<span class="text-color-muted">/4</span></div>
+                  <div class="home-why_text">
+                    <div class="home-why_text-top">
+                      <h3 class="heading-style-card home-why_title is-narrow">Enterprise Security &amp; Compliance</h3>
+                      <a href="/products/mx3-portal-and-app" class="button is-primary">
+                        <span class="button_label">Learn More</span>
+                        <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                      </a>
+                    </div>
+                    <p class="text-size-medium">MX3 supports organizations with more demanding data and privacy requirements through HIPAA compliance and SOC 2 Type II certification, helping teams deploy hydration testing with greater confidence.</p>
+                  </div>
+                  <div class="home-why_visual background-color-secondary" role="img" aria-label="MX3 meter with a test strip and HIPAA and SOC 2 badges">
+                    <img src="/assets/images/home/why-meter-strip.webp" alt="" class="home-why_layer is-meter is-strip" loading="lazy">
+                    <img src="/assets/images/home/why-shadow.svg" alt="" class="home-why_layer is-shadow" loading="lazy">
+                    <div class="home-why_badges">
+                      <img src="/assets/images/home/why-badge-hipaa.svg" alt="HIPAA compliant" class="home-why_badge" width="76" height="76" loading="lazy">
+                      <img src="/assets/images/home/why-badge-soc2.svg" alt="AICPA SOC 2" class="home-why_badge" width="76" height="76" loading="lazy">
+                    </div>
+                  </div>
+                </article>
+                <article class="home-why_card is-reversed" data-why-card>
+                  <div class="home-why_counter heading-style-stat">4<span class="text-color-muted">/4</span></div>
+                  <div class="home-why_visual"><img src="/assets/images/home/why-kit.jpg" alt="MX3 Pro system kit with meters, case and test strips" class="image-cover" loading="lazy"></div>
+                  <div class="home-why_text">
+                    <div class="home-why_text-top">
+                      <h3 class="heading-style-card home-why_title">Flexible Group &amp; Anonymous Workflows</h3>
+                      <a href="/products/mx3-portal-and-app" class="button is-primary">
+                        <span class="button_label">Learn More</span>
+                        <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                      </a>
+                    </div>
+                    <p class="text-size-medium">Support repeat testing across larger teams or crews, with or without tying every result to a named individual. This gives organizations more flexibility around privacy, operations, and program structure.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== USE CASES (Figma 7497:20440, two states) ===================== -->
+    <section class="section_home-usecases" data-usecases>
+      <div class="home-usecases_pin" data-usecases-pin>
+        <img src="/assets/images/home/usecase-background-workplace.jpg" alt="" class="home-usecases_background is-active" data-usecase-bg="0" loading="lazy">
+        <img src="/assets/images/home/usecase-background-sports.jpg" alt="" class="home-usecases_background" data-usecase-bg="1" loading="lazy">
+        <div class="grain-overlay"></div>
+        <h2 class="home-usecases_heading heading-style-section text-style-capitalize">Built for Performance &amp; Safety</h2>
+        <div class="home-usecases_panel">
+          <div class="home-usecases_item is-active" data-usecase="0">
+            <button class="home-usecases_trigger" type="button" aria-expanded="true">
+              <span class="home-usecases_number">01</span>
+              <span class="home-usecases_label">Workplace Safety</span>
+            </button>
+            <div class="home-usecases_details">
+              <div class="home-usecases_details-inner">
+                <h3 class="home-usecases_title">Workplace <br>Safety</h3>
+                <div class="home-usecases_image-wrapper">
+                  <img src="/assets/images/home/usecase-workplace-safety.jpg" alt="Site worker in high-visibility gear taking an MX3 saliva test" class="image-cover" loading="lazy">
+                </div>
+                <p class="home-usecases_text text-style-capitalize">MX3 complements the rest of a heat-stress program, working alongside environmental monitoring, training, and work-rest protocols.</p>
+                <a href="/markets/workplace-safety" class="button is-primary">
+                  <span class="button_label">Explore Workplace Safety</span>
+                  <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="home-usecases_item" data-usecase="1">
+            <button class="home-usecases_trigger" type="button" aria-expanded="false">
+              <span class="home-usecases_number">02</span>
+              <span class="home-usecases_label">Elite &amp; Professional Sports</span>
+            </button>
+            <div class="home-usecases_details">
+              <div class="home-usecases_details-inner">
+                <h3 class="home-usecases_title">Elite &amp; Professional <br>Sports</h3>
+                <div class="home-usecases_image-wrapper">
+                  <img src="/assets/images/home/usecase-elite-sports.jpg" alt="Tennis player wiping her forehead between points" class="image-cover" loading="lazy">
+                </div>
+                <p class="home-usecases_text text-style-capitalize">MX3 gives performance teams a clearer view of hydration status and sweat sodium needs, helping them personalize preparation, recovery, and rehydration strategies. Portable testing makes it easier to bring objective data into day-to-day training and competition environments.</p>
+                <a href="/markets/elite-sports" class="button is-primary">
+                  <span class="button_label">Explore Elite Sports</span>
+                  <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESULTS / STATS (Figma 7497:20472) ===================== -->
+    <section class="section_home-stats background-color-accent">
+      <div class="home-stats_divider"></div>
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-medium">
+            <div class="home-stats_component">
+              <div class="home-stats_grid">
+                <div class="home-stats_row">
+                  <span class="home-stats_mark"></span>
+                  <div class="home-stats_item">
+                    <div class="home-stats_number" data-count="200" data-suffix="k+">200k+</div>
+                    <p class="home-stats_label">Measurements taken each month.</p>
+                  </div>
+                </div>
+                <div class="home-stats_row">
+                  <div class="home-stats_item">
+                    <div class="home-stats_number" data-count="10" data-suffix="M+">10M+</div>
+                    <p class="home-stats_label">Hydration test strips sold worldwide.</p>
+                  </div>
+                  <span class="home-stats_mark"></span>
+                </div>
+                <div class="home-stats_row">
+                  <span class="home-stats_mark"></span>
+                  <div class="home-stats_item">
+                    <div class="home-stats_number" data-count="300" data-suffix="+">300+</div>
+                    <p class="home-stats_label">Professional sports teams and organizations.</p>
+                  </div>
+                </div>
+                <div class="home-stats_row">
+                  <div class="home-stats_item">
+                    <div class="home-stats_number" data-count="350" data-suffix="+">350+</div>
+                    <p class="home-stats_label">Workplace safety customers across 11 industries.</p>
+                  </div>
+                  <span class="home-stats_mark"></span>
+                </div>
+                <div class="home-stats_row">
+                  <span class="home-stats_mark"></span>
+                  <div class="home-stats_item">
+                    <div class="home-stats_number" data-count="10" data-suffix=" Sec">10 Sec</div>
+                    <p class="home-stats_label">Hydration-status result at the point of need.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="home-stats_header">
+                <div class="tag">Results</div>
+                <h2 class="heading-style-section text-style-capitalize home-stats_heading" data-animate="split-lines">From Measurement to Impact</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CUSTOMER STORIES (Figma 7497:20527) ===================== -->
+    <section class="section_home-stories" data-slider>
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="padding-section-medium">
+            <div class="home-stories_component">
+              <div class="home-stories_header" data-animate="fade-up">
+                <div class="tag">Customer outcomes</div>
+                <h2 class="home-stories_heading text-style-capitalize">Real-world programs show what repeatable hydration measurement can look like at scale. Learn how using MX3 results in safer outcomes, reduced employer costs, and stronger team buy-in.</h2>
+              </div>
+              <div class="home-stories_bar">
+                <div class="home-stories_fact text-style-capitalize">
+                  <div class="home-stories_fact-number">$79,081</div>
+                  <div class="home-stories_fact-text">
+                    <p class="text-weight-semibold">Estimated direct and indirect employer cost of a heat-prostration or heat-exhaustion case.</p>
+                    <a href="https://www.osha.gov" class="text-weight-medium text-style-link" target="_blank" rel="noopener">Source: OSHA</a>
+                  </div>
+                </div>
+                <div class="home-stories_arrows">
+                  <button class="button-icon is-previous" type="button" aria-label="Previous story" data-slider-prev><span class="icon-embed-arrow" aria-hidden="true"></span></button>
+                  <button class="button-icon" type="button" aria-label="Next story" data-slider-next><span class="icon-embed-arrow" aria-hidden="true"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-stories_viewport" data-slider-viewport>
+        <div class="home-stories_track" data-slider-track>
+          <article class="home-stories_card">
+            <div class="home-stories_image"><img src="/assets/images/home/story-brown-root.jpg" alt="Triathlete racing on a bike" class="image-cover" loading="lazy"></div>
+            <div class="home-stories_content">
+              <img src="/assets/images/logos/brown-and-root.svg" alt="Brown &amp; Root" class="home-stories_logo" width="174" height="30" loading="lazy">
+              <div class="home-stories_body">
+                <div class="home-stories_result">
+                  <h3 class="heading-style-stat text-style-capitalize">Zero heat-related incidents</h3>
+                  <p class="home-stories_subtitle">(2024 + 2025)</p>
+                </div>
+                <p class="text-size-regular text-style-capitalize home-stories_text">50 workers tested daily across a 300-worker site over two years, making hydration measurement part of the working day.</p>
+                <a href="/resources/case-studies" class="button is-black">
+                  <span class="button_label">Read the Story</span>
+                  <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="home-stories_card">
+            <div class="home-stories_image"><img src="/assets/images/home/story-clean-harbors.jpg" alt="MX3 saliva test with a cyclist at an event" class="image-cover" loading="lazy"></div>
+            <div class="home-stories_content">
+              <img src="/assets/images/logos/clean-harbors-dark.png" alt="Clean Harbors" class="home-stories_logo" width="98" height="30" loading="lazy">
+              <div class="home-stories_body">
+                <div class="home-stories_result">
+                  <h3 class="heading-style-stat text-style-capitalize">5x reduction</h3>
+                  <p class="home-stories_subtitle">In dehydrated readings</p>
+                </div>
+                <p class="text-size-regular text-style-capitalize home-stories_text">Daily hydration measurement became part of its existing heat-stress program across the U.S. Incinerations Group.</p>
+                <a href="/resources/case-studies" class="button is-black">
+                  <span class="button_label">Read the Story</span>
+                  <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="home-stories_card">
+            <div class="home-stories_image"><img src="/assets/images/home/story-bhp.jpg" alt="Rider and coach reviewing an MX3 test at an event" class="image-cover" loading="lazy"></div>
+            <div class="home-stories_content">
+              <img src="/assets/images/logos/bhp-dark.png" alt="BHP" class="home-stories_logo" width="79" height="30" loading="lazy">
+              <div class="home-stories_body">
+                <div class="home-stories_result">
+                  <h3 class="heading-style-stat text-style-capitalize">16 MX3 PRO units</h3>
+                  <p class="home-stories_subtitle">Higher testing frequency + stronger team buy-in</p>
+                </div>
+                <p class="text-size-regular text-style-capitalize home-stories_text">Field teams tested directly on site with reduced hygiene, paperwork, and manual data-entry friction.</p>
+                <a href="/resources/case-studies" class="button is-black">
+                  <span class="button_label">Read the Story</span>
+                  <span class="button_icon-box"><span class="icon-embed-arrow" aria-hidden="true"></span></span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- @include footer -->
+</div>
+
+<script src="/js/vendor/gsap.min.js"></script>
+<script src="/js/vendor/ScrollTrigger.min.js"></script>
+<script src="/js/global.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>
