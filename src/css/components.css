@@ -1,0 +1,265 @@
+/* ==========================================================================
+   MX3 global components
+   Webflow: build each as a Component (Navbar, Footer, Button, Tag).
+   ========================================================================== */
+
+/* ---------- Icon (masked so it inherits currentColor) ---------- */
+.icon-embed-arrow,
+.icon-embed-chevron,
+.icon-embed-cart {
+  display: inline-block;
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+          mask: var(--icon) center / contain no-repeat;
+}
+.icon-embed-arrow   { --icon: url("../assets/images/global/icon-arrow-right.png"); width: 1.5rem; height: 1.5rem; }
+.icon-embed-chevron { --icon: url("../assets/images/global/icon-chevron-down.png"); width: 1rem; height: 1rem; }
+.icon-embed-cart    { --icon: url("../assets/images/global/icon-cart.png"); width: 1.125rem; height: 1.125rem; }
+
+/* ---------- Button (Style Guide · Buttons, Component 357) ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-black);
+  cursor: pointer;
+}
+.button_label,
+.button_icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  background-color: var(--color-primary);
+  border: 1px solid transparent;
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+.button_label {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  letter-spacing: -0.02rem;
+  white-space: nowrap;
+}
+.button_icon-box { width: 3rem; overflow: hidden; }
+.button_icon-box .icon-embed-arrow { transition: transform var(--duration-base) var(--ease-out); }
+.button:hover .button_icon-box .icon-embed-arrow { transform: translateX(0.25rem); }
+
+/* Secondary Fill – dark mode (white) */
+.button.is-white .button_label,
+.button.is-white .button_icon-box { background-color: var(--color-white); border-color: var(--color-white); }
+.button.is-white:hover .button_label,
+.button.is-white:hover .button_icon-box { background-color: var(--color-primary); border-color: var(--color-primary); }
+
+/* Secondary Fill – light mode (black) */
+.button.is-black { color: var(--color-white); }
+.button.is-black .button_label,
+.button.is-black .button_icon-box { background-color: var(--color-black-button); border-color: var(--color-black-button); }
+.button.is-black:hover { color: var(--color-black); }
+.button.is-black:hover .button_label,
+.button.is-black:hover .button_icon-box { background-color: var(--color-primary); border-color: var(--color-primary); }
+
+/* Secondary Outline */
+.button.is-outline-white { color: var(--color-white); }
+.button.is-outline-white .button_label,
+.button.is-outline-white .button_icon-box { background-color: transparent; border-color: var(--color-white); }
+.button.is-outline-black .button_label,
+.button.is-outline-black .button_icon-box { background-color: transparent; border-color: var(--color-black-button); }
+.button.is-outline-white:hover .button_label,
+.button.is-outline-white:hover .button_icon-box,
+.button.is-outline-black:hover .button_label,
+.button.is-outline-black:hover .button_icon-box { border-color: var(--color-primary); }
+
+/* Primary hover */
+.button.is-primary:hover .button_label,
+.button.is-primary:hover .button_icon-box,
+.button:not([class*="is-"]):hover .button_label,
+.button:not([class*="is-"]):hover .button_icon-box { background-color: #6dd0dd; }
+
+/* Tertiary (text link + arrow) */
+.button.is-text { gap: 0.25rem; }
+.button.is-text .button_label { height: auto; padding: 0; background: none; border: 0; text-decoration: underline; text-underline-position: from-font; }
+.button.is-text .icon-embed-arrow { width: 1rem; height: 1rem; }
+.button.is-text.is-alternate { color: var(--color-white); }
+.button.is-text:hover { color: var(--color-primary); }
+
+/* Square icon-only button (slider arrows) */
+.button-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem;
+  border: 1px solid var(--color-black-button);
+  color: var(--color-black);
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+.button-icon:hover { background-color: var(--color-black-button); color: var(--color-white); }
+.button-icon.is-previous .icon-embed-arrow { transform: scaleX(-1); }
+.button-icon:disabled { opacity: 0.3; pointer-events: none; }
+
+/* Small nav buttons (Log In / Get a Demo) */
+.button-small {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-size: 0.875rem; line-height: 1rem; letter-spacing: -0.0175rem;
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--duration-fast) ease;
+}
+.button-small.is-primary { background-color: var(--color-primary); }
+.button-small:hover { background-color: #6dd0dd; }
+
+/* ---------- Tag / eyebrow pill ("ABOUT US", "THE GAP" …) ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  line-height: 0.9375rem;
+  letter-spacing: -0.0125rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---------- Corner marks (blue registration ticks on framed boxes) ---------- */
+.corner-mark {
+  position: absolute;
+  width: 1.5rem; height: 1.25rem;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.corner-mark::before {
+  content: "";
+  width: 0.875rem; height: 0.5625rem;
+  background: url("../assets/images/global/icon-corner-mark.png") center / contain no-repeat;
+}
+.corner-mark.is-white::before { filter: brightness(0) invert(1); }
+.corner-mark.is-top-left     { top: -0.625rem; left: -0.75rem; }
+.corner-mark.is-top-right    { top: -0.625rem; right: -0.75rem; }
+.corner-mark.is-bottom-left  { bottom: -0.625rem; left: -0.75rem; }
+.corner-mark.is-bottom-right { bottom: -0.625rem; right: -0.75rem; }
+
+/* ---------- Film grain overlay (Figma "Image" fill @ 10%) ---------- */
+.grain-overlay {
+  position: absolute; inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='64' height='64' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 4rem 4rem;
+}
+
+/* ---------- Asset placeholder (image not yet exported from Figma) ---------- */
+.asset-pending { background-color: #2a2a2a; }
+
+/* ==========================================================================
+   Navbar (Figma 7685:10563)
+   ========================================================================== */
+.navbar_component {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background-color: var(--overlay-nav);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color-glass);
+  color: var(--color-white);
+  transition: transform var(--duration-base) var(--ease-out), background-color var(--duration-base) ease;
+}
+.navbar_component.is-hidden { transform: translateY(-100%); }
+.navbar_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--nav-height);
+  padding: 0.75rem var(--site-margin);
+}
+.navbar_logo-link { display: block; width: 7.375rem; }
+.navbar_logo { width: 100%; height: auto; display: block; }
+.navbar_menu { display: flex; align-items: center; gap: 0.75rem; }
+.navbar_links { display: flex; align-items: center; gap: 0.5rem; }
+.navbar_link {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  padding: 0.25rem 0.375rem;
+  font-size: 0.875rem; line-height: 1.125rem;
+  transition: color var(--duration-fast) ease;
+}
+.navbar_link:hover { color: var(--color-primary); }
+.navbar_link .icon-embed-chevron { transition: transform var(--duration-fast) ease; }
+.navbar_link:hover .icon-embed-chevron { transform: rotate(180deg); }
+.navbar_buttons { display: flex; align-items: center; gap: 0.5rem; }
+.navbar_menu-button { display: none; width: 2.5rem; height: 2.5rem; position: relative; }
+.navbar_menu-button span {
+  position: absolute; left: 0.5rem; right: 0.5rem; height: 1.5px; background: currentColor;
+  transition: transform var(--duration-base) var(--ease-out), opacity var(--duration-fast);
+}
+.navbar_menu-button span:nth-child(1) { top: 0.875rem; }
+.navbar_menu-button span:nth-child(2) { top: 1.25rem; }
+.navbar_menu-button span:nth-child(3) { top: 1.625rem; }
+.navbar_component.is-open .navbar_menu-button span:nth-child(1) { transform: translateY(0.375rem) rotate(45deg); }
+.navbar_component.is-open .navbar_menu-button span:nth-child(2) { opacity: 0; }
+.navbar_component.is-open .navbar_menu-button span:nth-child(3) { transform: translateY(-0.375rem) rotate(-45deg); }
+
+@media screen and (max-width: 991px) {
+  .navbar_menu-button { display: block; }
+  .navbar_menu {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 1.5rem;
+    padding: 1.5rem var(--site-margin) 2rem;
+    background-color: var(--color-black);
+    border-bottom: 1px solid var(--border-color-dark);
+    opacity: 0; visibility: hidden; transform: translateY(-0.5rem);
+    transition: opacity var(--duration-base) ease, transform var(--duration-base) var(--ease-out), visibility 0s linear var(--duration-base);
+  }
+  .navbar_component.is-open .navbar_menu { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .navbar_links { flex-direction: column; align-items: stretch; gap: 0; }
+  .navbar_link { justify-content: space-between; padding: 0.875rem 0; font-size: 1.25rem; line-height: 1.5rem; border-bottom: 1px solid var(--border-color-dark); }
+  .navbar_buttons .button-small { flex: 1; padding: 0.875rem; }
+}
+
+/* ==========================================================================
+   Footer (Figma "Footer / Desktop v2" 7687:11112)
+   ========================================================================== */
+.footer_component { background-color: var(--color-black); color: var(--color-white); overflow: hidden; }
+.footer_wrapper { display: flex; flex-direction: column; gap: 3rem; padding-top: 4rem; padding-bottom: 2rem; }
+.footer_top { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.footer_heading { max-width: 43.5rem; }
+.footer_cta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.footer_divider { height: 1px; background-color: var(--border-color-dark); }
+.footer_middle { display: flex; align-items: stretch; justify-content: space-between; gap: 3rem; }
+.footer_brand { display: flex; flex-direction: column; justify-content: space-between; gap: 3rem; width: 21.25rem; }
+.footer_badges { width: 21.375rem; height: auto; }
+.footer_socials { display: flex; gap: 0.5rem; }
+/* Interim sprite of the 5 Figma social icons; swap for individual SVGs once exported */
+.footer_social-link {
+  display: block; width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  background: url("../assets/images/global/footer-socials.png") 0 0 / 21.25rem 2.75rem no-repeat;
+  transition: opacity var(--duration-fast);
+}
+.footer_social-link:hover { opacity: 0.7; }
+.footer_social-link.is-x         { background-position: -3.25rem 0; }
+.footer_social-link.is-youtube   { background-position: -6.5rem 0; }
+.footer_social-link.is-instagram { background-position: -9.75rem 0; }
+.footer_social-link.is-linkedin  { background-position: -13rem 0; }
+.footer_link-columns { display: flex; flex-direction: column; gap: 2.5rem; width: 50.875rem; }
+.footer_link-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.footer_link-column { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+.footer_column-heading { font-size: 0.875rem; line-height: 1rem; letter-spacing: 0.035rem; font-weight: var(--font-weight-medium); }
+.footer_link { color: var(--text-color-secondary-dark); font-size: 1rem; line-height: 1.25rem; letter-spacing: -0.02rem; transition: color var(--duration-fast); }
+.footer_link:hover { color: var(--color-white); }
+.footer_bottom { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; color: var(--text-color-secondary-dark); }
+.footer_credit { font-size: 0.875rem; line-height: 1.125rem; }
+.footer_legal-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.footer_logo { display: block; width: 100%; height: auto; }
+
+@media screen and (max-width: 991px) {
+  .footer_top, .footer_middle { flex-direction: column; align-items: flex-start; }
+  .footer_brand, .footer_link-columns { width: 100%; }
+}
+@media screen and (max-width: 767px) {
+  .footer_link-row { grid-template-columns: repeat(2, 1fr); }
+  .footer_bottom { flex-direction: column-reverse; align-items: flex-start; }
+  .footer_legal-links { gap: 0.75rem 1.5rem; }
+  .footer_badges { width: 100%; max-width: 21.375rem; }
+}

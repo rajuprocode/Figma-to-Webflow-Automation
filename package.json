@@ -1,0 +1,27 @@
+{
+  "name": "mx3-website",
+  "version": "1.0.0",
+  "description": "MX3 Hydration Testing website, built Webflow Client First style from Figma, deployable on Vercel",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajuprocode/Figma-to-Webflow-Automation.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajuprocode/Figma-to-Webflow-Automation/issues"
+  },
+  "homepage": "https://github.com/rajuprocode/Figma-to-Webflow-Automation#readme",
+  "devDependencies": {
+    "geist": "^1.7.2",
+    "gsap": "^3.15.0"
+  },
+  "private": true
+}
